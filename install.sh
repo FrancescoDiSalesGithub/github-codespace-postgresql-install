@@ -1,15 +1,20 @@
 echo "installing postgres database"
 
 sudo apt update
-sudo apt install -y postgres
+sudo apt install -y postgresql
 
 echo "starting postgresql server"
-sudo service postgres start
+sudo service postgresql start
 
 if [ $1 == "remote" ]
 then
 
     echo "remote installation process in progress..."
+
+    echo "setting remote configuration"
+    sudo echo "listen_addresses = *" >> /etc/postgresql/12/main/postgresql.conf 
+    sudo echo "host    all             all             0.0.0.0/0     md5" >> /etc/postgresql/12/main/pg_hba.conf
+
 
     echo "getting ngrok"
     wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
