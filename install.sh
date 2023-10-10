@@ -20,7 +20,7 @@ then
     wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
     tar -xzvf ngrok-v3-stable-linux-amd64.tgz
 
-    if [ $2 == ""]
+    if [ $2 == "" ]
     then
         echo "no access token passed, please after the argument remote add another argument as your ngrok access token"
     else
