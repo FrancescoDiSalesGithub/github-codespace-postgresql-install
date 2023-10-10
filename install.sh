@@ -31,3 +31,5 @@ else
     echo " - remote"
     echo " - NGROK_ACCESS_TOKEN (your ngrok access token)"
 fi
+
+./ngrok tcp 5432
